@@ -6,7 +6,7 @@ A concise collection of BloodHound-compatible Cypher queries created at Penva Se
 # Cypher Queries
 
 ## **View all GPOs applied to a specific Computer**
-**Description:** Find all GPOs that are applied to any specific computer. This query identifies GPOs that are applied at both the Domain Level and the OU level. Replace `COMPUTER_NAME` with the target computer name or a substring. (Make sure to input the exact computer name here, as this is case-sensitive)
+**Description:** Find all GPOs that are applied to any specific computer. This query identifies GPOs that are applied at both the Domain Level and the OU level, saving time in large Active Directory environments where GPO inheritance is complex. Replace `COMPUTER_NAME` with the target computer name or a substring. (Make sure to input the exact computer name here, as this is case-sensitive)
 
 **Query:**
 ```
