@@ -1,6 +1,8 @@
 # BloodhoundCypherQueries
 A concise collection of BloodHound-compatible Cypher queries created at Penva Security. Use this repo as a library of inspected, annotated queries you can run in BloodHound/Neo4j during engagements or research.
+
 <br>
+
 # Cypher Queries
 
 ## **View all GPOs applied to a specific Computer**
