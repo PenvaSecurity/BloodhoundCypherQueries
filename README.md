@@ -15,6 +15,7 @@ RETURN gpo
 ```
 **Tested On:** BloodHound v8.1.3/SharpHound v2.7.1
 
+<br>
 
 ## Responsible / Legal
 These queries are intended for authorized testing, research, and defensive use only. Do not use on networks you do not own or have explicit permission to test. The maintainers are not responsible for misuse.
