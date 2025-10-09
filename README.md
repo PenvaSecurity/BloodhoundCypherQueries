@@ -10,7 +10,7 @@ A concise collection of BloodHound-compatible Cypher queries created at Penva Se
 
 **Query:**
 ```
-MATCH (gpo:GPO)-[:GPLink]->(Base)-[:Contains*..]->(c:Computer) WHERE c.name CONTAINS "COMPUTER_NAME"
+MATCH (gpo:GPO)-[:GPLink]->(Base)-[:Contains*..]->(c:Computer) WHERE toLower(c.name) CONTAINS toLower("COMPUTER_NAME")
 RETURN gpo
 ```
 **Tested On:** BloodHound v8.1.3/SharpHound v2.7.1
