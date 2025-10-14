@@ -6,12 +6,14 @@ A concise collection of BloodHound-compatible Cypher queries created at Penva Se
 # Cypher Queries
 
 ## **All GPOs applied to a specific Computer**
-**Description:** View all GPOs that are applied to any specific computer. This query identifies GPOs that are applied at both the Domain Level and the OU level, saving time in large Active Directory environments where GPO inheritance is complex. Replace `COMPUTER_NAME` with the target computer name or a substring.
+**Description:** View all GPOs that are applied to any specific computer. This query identifies GPOs that are applied at both the Domain Level and the OU level, saving time in large Active Directory environments where GPO inheritance is complex. Replace `COMPUTER_NAME` with the target computer name or a substring. Note this does not take OU 'Block inheritance' and GPO 'No Override' into account.
 
 **Query:**
 ```
-MATCH (gpo:GPO)-[:GPLink]->(Base)-[:Contains*..]->(c:Computer) WHERE toLower(c.name) CONTAINS toLower("COMPUTER_NAME")
-RETURN gpo
+// Replace "HOSTNAME/FQDN" with the computer's
+MATCH p=(c:Computer)<-[:Contains*..]-(:Base)<-[:GPLink]-(:GPO)
+WHERE toLower(c.name) CONTAINS toLower("HOSTNAME/FQDN")
+RETURN p
 ```
 **Tested On:** BloodHound v8.1.3/SharpHound v2.7.1
 
